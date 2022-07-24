@@ -5,7 +5,7 @@ import thegraph
 
 def run():
 	# Please input the username and password.
-	dune = Dune('username', 'password')
+	dune = Dune('simplessssss', '8224074zms')
 	# For more details, please check dune_query.sql. 
 	data = dune.query_result(1062715)['data']['get_result_by_result_id']
 

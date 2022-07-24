@@ -1,0 +1,24 @@
+load("@python_deps//:requirements.bzl", "requirement")
+
+py_library(
+	name = "dune",
+	srcs = ["dune.py"],
+	deps = [
+		requirement("duneanalytics")
+	]
+)
+
+py_library(
+	name = "thegraph",
+	srcs = ["thegraph.py"],
+)
+
+py_binary(
+	name = "dump_ipns_ens",
+	srcs = ["dump_ipns_ens.py"],
+	deps = [
+		':dune',
+		':thegraph',
+		requirement("content-hash")
+	]
+)

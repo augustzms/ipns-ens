@@ -1,4 +1,3 @@
-# ref: https://github.com/itzmestar/duneanalytics
 from duneanalytics import DuneAnalytics
 
 class Dune:
