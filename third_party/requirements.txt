@@ -1,2 +1,2 @@
-duneanalytics
-content_hash
+content_hash==1.1.1
+duneanalytics==1.2.0
