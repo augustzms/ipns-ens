@@ -14,8 +14,8 @@ py_library(
 )
 
 py_binary(
-	name = "dump_ipns_ens",
-	srcs = ["dump_ipns_ens.py"],
+	name = "main",
+	srcs = ["main.py"],
 	deps = [
 		':dune',
 		':thegraph',
