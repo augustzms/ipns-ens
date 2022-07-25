@@ -1,7 +1,8 @@
+import constants
 import requests
 
 def _query(q, subgraph):
-    BASE_URL = "https://api.thegraph.com"
+    BASE_URL = constants.BASE_URL
     r = requests.post(
         f"{BASE_URL}/subgraphs/name/{subgraph}",
         json={"query": q},
@@ -12,7 +13,7 @@ def _query(q, subgraph):
         # raise TheGraphQueryError(resp["errors"])
     return resp["data"]
 
-def query_ens_by_id(id, subgraph="ensdomains/ens"):
+def query_ens_by_id(id, subgraph=constants.ENS):
     q = f"""
     {{
       domains(where: {{id: "{id}"}}) {{
