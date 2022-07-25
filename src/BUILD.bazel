@@ -1,6 +1,11 @@
 load("@python_deps//:requirements.bzl", "requirement")
 
 py_library(
+	name = "constants",
+	srcs = ["constants.py"],
+)
+
+py_library(
 	name = "dune",
 	srcs = ["dune.py"],
 	deps = [
@@ -11,14 +16,17 @@ py_library(
 py_library(
 	name = "thegraph",
 	srcs = ["thegraph.py"],
+	deps = [
+		":constants"
+	]
 )
 
 py_binary(
 	name = "main",
 	srcs = ["main.py"],
 	deps = [
-		':dune',
-		':thegraph',
+		":dune",
+		":thegraph",
 		requirement("content-hash")
 	]
 )
