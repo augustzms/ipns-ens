@@ -1,4 +1,3 @@
-#!/usr/bin/python -tt
 import content_hash
 from dune import Dune
 import sys
@@ -7,7 +6,6 @@ import thegraph
 def run():
 	dune = Dune('simplessssss', '8224074zms')
 	data = dune.query_result(1062715)['data']['get_result_by_result_id']
-	f = open('../results/ens.txt', 'w')
 
 	for idx in range(len(data)):
 		# Namehash is the hash from the ens name.
@@ -23,9 +21,9 @@ def run():
 			if "ipns-ns" in codec or "ipfs-ns" in codec:
 				name = thegraph.query_ens_by_id(namehash)
 				if name is not None:
-					f.write("%s\n" % name)
-		except:
-			continue	
+					print(name)
+		except Exception as e:
+			print(e)
 	f.close()
 
 

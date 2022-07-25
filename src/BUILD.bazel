@@ -6,6 +6,11 @@ py_library(
 )
 
 py_library(
+	name = "exceptions",
+	srcs = ["exceptions.py"],
+)
+
+py_library(
 	name = "dune",
 	srcs = ["dune.py"],
 	deps = [
@@ -17,7 +22,8 @@ py_library(
 	name = "thegraph",
 	srcs = ["thegraph.py"],
 	deps = [
-		":constants"
+		":constants",
+		":exceptions"
 	]
 )
 
