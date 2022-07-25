@@ -1,1 +1,15 @@
-Tool to dump all ipns ENS names.
+Tool to dump all ipns & ipfs ENS names.
+
+To use this tool, you can either build it with bazel/yourself.
+Before that, a valid account for dune.com is required.
+
+### Bazel
+Bazel is an open source build tool and please check the details https://docs.bazel.build/versions/main/install.html.
+
+After that, you will be able to run the tool by:
+bazel run src:main -- --username=[DuneAccount_UserName] --password=[DuneAccount_Password]
+
+### Yourself
+You you need to check the required modules from the third_party/requirements.txt file.
+Then you should be able to run the tool by:
+python main.py --username=[DuneAccount_UserName] --password=[DuneAccount_Password]
