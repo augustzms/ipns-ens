@@ -1,10 +1,12 @@
+import argparse
 import content_hash
-from dune import Dune
 import sys
 import thegraph
 
-def run():
-	dune = Dune('simplessssss', '8224074zms')
+from dune import Dune
+
+def run(username, password):
+	dune = Dune(username, password)
 	data = dune.query_result(1062715)['data']['get_result_by_result_id']
 
 	for idx in range(len(data)):
@@ -29,4 +31,10 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+	parser = argparse.ArgumentParser(description='Dune analysis account info.')
+	parser.add_argument('--username', metavar='username', required=True,
+                        help='Dune analysis account user name')
+	parser.add_argument('--password', metavar='password', required=True,
+                        help='Dune analysis account password')
+	args = parser.parse_args()
+	run(username=args.username, password=args.password)
